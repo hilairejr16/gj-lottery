@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import Stripe from 'stripe';
 import { NextRequest, NextResponse } from 'next/server';
 import { createAdminClient } from '@/lib/supabase/server';
