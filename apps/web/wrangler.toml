@@ -2,3 +2,9 @@ name = "gj-lottery"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".open-next"
+
+# Plain-text build-time variables (NEXT_PUBLIC_ vars must be here, not Dashboard Secrets)
+[vars]
+NEXT_PUBLIC_APP_URL = "https://gj-lottery.pages.dev"
+NEXT_PUBLIC_SUPABASE_URL = "https://avtquvinozqogeskbjyd.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2dHF1dmlub3pxb2dlc2tianlkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg0NTI3NTksImV4cCI6MjA5NDAyODc1OX0.LUpxmwJqkuD6o44JAhn2ec5TqzAmhWxGdXrtChmbbh8"
