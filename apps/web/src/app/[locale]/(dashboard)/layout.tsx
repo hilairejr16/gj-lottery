@@ -5,11 +5,18 @@ import { createClient } from '@/lib/supabase/server';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
-export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
+export default async function DashboardLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
-  if (!user) redirect('/login');
+  if (!user) redirect(`/${locale}/login`);
 
   const { data: profile } = await supabase
     .from('profiles')
