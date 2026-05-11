@@ -13,16 +13,29 @@ export default async function DashboardLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
+
+  let user = null;
+  let profile = null;
+
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase.auth.getUser();
+    user = data.user;
+
+    if (user) {
+      const { data: profileData } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', user.id)
+        .single();
+      profile = profileData;
+    }
+  } catch {
+    // Supabase not reachable (e.g. env vars missing) — redirect to login
+    redirect(`/${locale}/login`);
+  }
 
   if (!user) redirect(`/${locale}/login`);
-
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('id', user.id)
-    .single();
 
   return (
     <div className="flex flex-col min-h-screen">
