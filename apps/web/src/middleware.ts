@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
@@ -5,9 +7,25 @@ import { routing } from './i18n/routing';
 
 const intlMiddleware = createMiddleware(routing);
 
-const PUBLIC_ROUTES = ['/', '/login', '/register', '/about'];
+const PUBLIC_ROUTES = [
+  '/',
+  '/login',
+  '/register',
+  '/about',
+  '/contact',
+  '/faq',
+  '/jobs',
+  '/blog',
+  '/legal',
+  '/privacy',
+  '/privacy-statement',
+  '/terms',
+  '/cookie-policy',
+  '/disclaimer',
+  '/responsible-gambling',
+];
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   let supabaseResponse = NextResponse.next({ request });
@@ -59,5 +77,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|images|icons).*)'],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|images|icons|logo).*)'],
 };
