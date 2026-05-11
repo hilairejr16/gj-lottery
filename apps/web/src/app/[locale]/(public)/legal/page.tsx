@@ -1,6 +1,6 @@
 export const runtime = 'edge';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Scale, Shield, Cookie, FileText, AlertTriangle, Lock } from 'lucide-react';
 
 const legalLinks = [

@@ -3,6 +3,7 @@ export const runtime = 'edge';
 
 import { useState } from 'react';
 import { HelpCircle, ChevronDown } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
 
 const faqs = [
   {
@@ -92,9 +93,9 @@ export default function FAQPage() {
 
       <div className="mt-12 text-center p-6 bg-bg-card border border-bg-border rounded-xl">
         <p className="text-gray-400 text-sm">Still have questions? / Toujou gen kesyon?</p>
-        <a href="/contact" className="mt-3 inline-block px-6 py-2.5 bg-brand-gold text-bg-base font-bold rounded-xl hover:bg-yellow-400 transition-colors text-sm">
+        <Link href="/contact" className="mt-3 inline-block px-6 py-2.5 bg-brand-gold text-bg-base font-bold rounded-xl hover:bg-yellow-400 transition-colors text-sm">
           Contact Support / Kontakte Sipò
-        </a>
+        </Link>
       </div>
     </div>
   );

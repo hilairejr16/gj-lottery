@@ -1,6 +1,7 @@
 export const runtime = 'edge';
 
 import { FileText } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
 
 export default function TermsPage() {
   return (
@@ -82,7 +83,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="text-xl font-bold text-white mb-3">8. Responsible Gambling / Paryaj Responsab</h2>
-          <p>G&amp;J Lottery promotes responsible gambling. We offer self-exclusion, deposit limits, and cooling-off periods. If gambling is affecting your life, please visit our <a href="/responsible-gambling" className="text-brand-gold hover:underline">Responsible Gambling</a> page or contact us immediately.</p>
+          <p>G&amp;J Lottery promotes responsible gambling. We offer self-exclusion, deposit limits, and cooling-off periods. If gambling is affecting your life, please visit our <Link href="/responsible-gambling" className="text-brand-gold hover:underline">Responsible Gambling</Link> page or contact us immediately.</p>
         </section>
 
         <section>

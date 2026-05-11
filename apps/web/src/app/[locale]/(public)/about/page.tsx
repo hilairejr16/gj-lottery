@@ -1,6 +1,7 @@
 export const runtime = 'edge';
 
 import { Trophy, Globe, Users, ShieldCheck } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
 
 const stats = [
   { label: 'Active Players / Jwè Aktif', value: '10,000+' },
@@ -78,9 +79,9 @@ export default function AboutPage() {
       <div className="text-center p-8 bg-gradient-to-br from-brand-blue/30 to-bg-card border border-bg-border rounded-2xl">
         <h3 className="text-xl font-black text-white mb-2">Join the Community / Rantre nan Kominote a</h3>
         <p className="text-gray-400 text-sm mb-5">Be part of Haiti's #1 betting platform.</p>
-        <a href="/register" className="inline-block px-8 py-3 bg-brand-gold text-bg-base font-bold rounded-xl hover:bg-yellow-400 transition-colors">
+        <Link href="/register" className="inline-block px-8 py-3 bg-brand-gold text-bg-base font-bold rounded-xl hover:bg-yellow-400 transition-colors">
           Create Account / Kreye Kont
-        </a>
+        </Link>
       </div>
     </div>
   );

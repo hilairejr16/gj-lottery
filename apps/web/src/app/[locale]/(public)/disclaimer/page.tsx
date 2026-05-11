@@ -1,6 +1,7 @@
 export const runtime = 'edge';
 
 import { AlertTriangle } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
 
 export default function DisclaimerPage() {
   return (
@@ -52,7 +53,7 @@ export default function DisclaimerPage() {
 
         <section>
           <h2 className="text-xl font-bold text-white mb-3">Help / Èd</h2>
-          <p>If gambling is affecting you or someone you know, contact a responsible gambling organization or visit our <a href="/responsible-gambling" className="text-brand-gold hover:underline">Responsible Gambling</a> page.</p>
+          <p>If gambling is affecting you or someone you know, contact a responsible gambling organization or visit our <Link href="/responsible-gambling" className="text-brand-gold hover:underline">Responsible Gambling</Link> page.</p>
         </section>
       </div>
     </div>

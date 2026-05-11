@@ -1,6 +1,7 @@
 export const runtime = 'edge';
 
 import { Shield } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
 
 export default function PrivacyPolicyPage() {
   const updated = 'January 1, 2025';
@@ -73,7 +74,7 @@ export default function PrivacyPolicyPage() {
 
         <section>
           <h2 className="text-xl font-bold text-white mb-3">7. Cookies</h2>
-          <p>We use cookies and similar tracking technologies. See our <a href="/cookie-policy" className="text-brand-gold hover:underline">Cookie Policy</a> for details.</p>
+          <p>We use cookies and similar tracking technologies. See our <Link href="/cookie-policy" className="text-brand-gold hover:underline">Cookie Policy</Link> for details.</p>
         </section>
 
         <section>
