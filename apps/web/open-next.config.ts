@@ -12,17 +12,8 @@ const config: OpenNextConfig = {
     },
   },
   edgeExternals: ["node:crypto"],
-  middleware: {
-    external: true,
-    override: {
-      wrapper: "cloudflare-edge",
-      converter: "edge",
-      proxyExternalRequest: "fetch",
-      incrementalCache: "dummy",
-      tagCache: "dummy",
-      queue: "dummy",
-    },
-  },
+  // No middleware file exists — omitting this section prevents OpenNext
+  // from creating a broken external middleware worker that blocks all requests.
 };
 
 export default config;
