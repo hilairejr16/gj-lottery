@@ -12,10 +12,12 @@ import {
 
 export default async function HomePage() {
   let profile = null;
+  let user: { id: string } | null = null;
 
   try {
     const supabase = await createClient();
-    const { data: { user } } = await supabase.auth.getUser();
+    const { data: { user: authUser } } = await supabase.auth.getUser();
+    user = authUser;
     if (user) {
       const { data } = await supabase
         .from('profiles')
