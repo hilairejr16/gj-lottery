@@ -202,7 +202,7 @@ function MatchCard({ match, onSelect, selected }:
 
 // ── Main Sports Page ─────────────────────────────────────────
 export default function SportsPage() {
-  const [activeSport, setActiveSport] = useState(SPORTS[0].key);
+  const [activeSport, setActiveSport] = useState<string>(SPORTS[0].key);
   const [matches, setMatches]         = useState<OddsMatch[]>([]);
   const [loading, setLoading]         = useState(true);
   const [selections, setSelections]   = useState<BetSelection[]>([]);

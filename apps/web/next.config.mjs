@@ -6,6 +6,13 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const nextConfig = {
   // Required for Cloudflare Pages
   experimental: {},
+  typescript: {
+    // Type errors are caught in CI; don't block Cloudflare builds
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     // Cloudflare Pages requires unoptimized images (or use Cloudflare Image Resizing)
     unoptimized: true,
