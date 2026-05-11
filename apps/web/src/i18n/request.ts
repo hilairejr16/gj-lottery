@@ -10,5 +10,12 @@ export default getRequestConfig(async ({ requestLocale }) => {
   return {
     locale,
     messages: (await import(`../messages/${locale}.json`)).default,
+    // Fallback: return the key path instead of crashing on missing translations
+    onError(error) {
+      if (process.env.NODE_ENV !== 'production') console.warn('[next-intl]', error.message);
+    },
+    getMessageFallback({ namespace, key }) {
+      return namespace ? `${namespace}.${key}` : key;
+    },
   };
 });

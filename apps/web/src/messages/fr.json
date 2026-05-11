@@ -1,1 +1,74 @@
-{}
+{
+  "nav": {
+    "home": "Accueil",
+    "sports": "Sports",
+    "virtual": "Virtuel",
+    "lottery": "Loterie",
+    "wallet": "Portefeuille",
+    "admin": "Admin",
+    "profile": "Profil",
+    "logout": "Déconnexion",
+    "login": "Connexion",
+    "register": "S'inscrire"
+  },
+  "auth": {
+    "login_title": "Connexion à votre compte",
+    "login_subtitle": "Bienvenue de retour à GJ Lottery",
+    "register_title": "Créer votre compte",
+    "register_subtitle": "Rejoignez GJ Lottery gratuitement",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirm_password": "Confirmer le mot de passe",
+    "full_name": "Nom complet",
+    "username": "Nom d'utilisateur",
+    "phone": "Téléphone (optionnel)",
+    "forgot_password": "Mot de passe oublié?",
+    "logging_in": "Connexion...",
+    "login_btn": "Se connecter",
+    "no_account": "Pas de compte? ",
+    "register_btn": "S'inscrire",
+    "registering": "Inscription...",
+    "have_account": "Déjà un compte? ",
+    "terms_agree": "J'accepte les Conditions d'Utilisation et la Politique de Confidentialité",
+    "age_confirm": "Je confirme avoir 18 ans ou plus",
+    "errors": {
+      "invalid_credentials": "E-mail ou mot de passe incorrect"
+    }
+  },
+  "wallet": {
+    "title": "Mon Portefeuille",
+    "balance": "Solde",
+    "deposit": "Déposer",
+    "withdraw": "Retirer",
+    "history": "Historique des Transactions",
+    "no_transactions": "Aucune transaction pour le moment",
+    "status": {
+      "pending": "En attente",
+      "approved": "Approuvé",
+      "rejected": "Rejeté",
+      "completed": "Complété"
+    },
+    "deposit_modal": {
+      "title": "Effectuer un Dépôt",
+      "select_method": "Choisir la méthode de paiement",
+      "account_info": "Informations du compte pour l'envoi",
+      "amount": "Montant (HTG)",
+      "reference": "Numéro de référence de transaction",
+      "reference_help": "Entrez le numéro de référence après l'envoi des fonds",
+      "notes": "Notes (optionnel)",
+      "submit": "Soumettre le dépôt",
+      "success": "Demande de dépôt envoyée! Nous allons la vérifier."
+    },
+    "withdraw_modal": {
+      "title": "Effectuer un Retrait",
+      "select_method": "Choisir la méthode de retrait",
+      "amount": "Montant (HTG)",
+      "destination": "Numéro / Adresse de destination",
+      "destination_help": "Entrez le numéro de téléphone, adresse ou compte pour recevoir les fonds",
+      "notes": "Notes (optionnel)",
+      "submit": "Soumettre la demande de retrait",
+      "success": "Demande de retrait envoyée! Nous allons la traiter.",
+      "insufficient": "Solde insuffisant pour ce retrait"
+    }
+  }
+}

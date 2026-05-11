@@ -1,1 +1,74 @@
-{}
+{
+  "nav": {
+    "home": "Home",
+    "sports": "Sports",
+    "virtual": "Virtual",
+    "lottery": "Lottery",
+    "wallet": "Wallet",
+    "admin": "Admin",
+    "profile": "Profile",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register"
+  },
+  "auth": {
+    "login_title": "Sign In to Your Account",
+    "login_subtitle": "Welcome back to GJ Lottery",
+    "register_title": "Create Your Account",
+    "register_subtitle": "Join GJ Lottery for free",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "full_name": "Full Name",
+    "username": "Username",
+    "phone": "Phone (optional)",
+    "forgot_password": "Forgot Password?",
+    "logging_in": "Signing in...",
+    "login_btn": "Sign In",
+    "no_account": "Don't have an account? ",
+    "register_btn": "Register",
+    "registering": "Creating account...",
+    "have_account": "Already have an account? ",
+    "terms_agree": "I agree to the Terms of Use and Privacy Policy",
+    "age_confirm": "I confirm I am 18 years of age or older",
+    "errors": {
+      "invalid_credentials": "Invalid email or password"
+    }
+  },
+  "wallet": {
+    "title": "My Wallet",
+    "balance": "Balance",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "history": "Transaction History",
+    "no_transactions": "No transactions yet",
+    "status": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "completed": "Completed"
+    },
+    "deposit_modal": {
+      "title": "Make a Deposit",
+      "select_method": "Select Payment Method",
+      "account_info": "Account Info for Sending Funds",
+      "amount": "Amount (HTG)",
+      "reference": "Transaction Reference Number",
+      "reference_help": "Enter the reference number after sending the funds",
+      "notes": "Notes (optional)",
+      "submit": "Submit Deposit",
+      "success": "Deposit request submitted! We will verify it shortly."
+    },
+    "withdraw_modal": {
+      "title": "Make a Withdrawal",
+      "select_method": "Select Withdrawal Method",
+      "amount": "Amount (HTG)",
+      "destination": "Destination Number / Address",
+      "destination_help": "Enter the phone number, address, or account to receive funds",
+      "notes": "Notes (optional)",
+      "submit": "Submit Withdrawal Request",
+      "success": "Withdrawal request submitted! We will process it shortly.",
+      "insufficient": "Insufficient balance for this withdrawal"
+    }
+  }
+}

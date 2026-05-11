@@ -1,1 +1,74 @@
-{}
+{
+  "nav": {
+    "home": "Akèy",
+    "sports": "Espò",
+    "virtual": "Vityèl",
+    "lottery": "Lotri",
+    "wallet": "Pòtfèy",
+    "admin": "Admin",
+    "profile": "Pwofil",
+    "logout": "Dekonekte",
+    "login": "Konekte",
+    "register": "Enskri"
+  },
+  "auth": {
+    "login_title": "Konekte nan Kont Ou",
+    "login_subtitle": "Bon Retou nan GJ Lottery",
+    "register_title": "Kreye Kont Ou",
+    "register_subtitle": "Rantre nan GJ Lottery gratis",
+    "email": "Imèl",
+    "password": "Modpas",
+    "confirm_password": "Konfime Modpas",
+    "full_name": "Non Konplè",
+    "username": "Nonkatye",
+    "phone": "Telefòn (opsyonèl)",
+    "forgot_password": "Bliye Modpas?",
+    "logging_in": "Koneksyon...",
+    "login_btn": "Konekte",
+    "no_account": "Pa gen kont? ",
+    "register_btn": "Enskri",
+    "registering": "Enskripsyon...",
+    "have_account": "Deja gen kont? ",
+    "terms_agree": "Mwen aksepte Tèm Itilizasyon ak Politik Konfidansyalite",
+    "age_confirm": "Mwen konfime mwen gen 18 an oswa plis",
+    "errors": {
+      "invalid_credentials": "Imèl oswa modpas enkòrèk"
+    }
+  },
+  "wallet": {
+    "title": "Pòtfèy Mwen",
+    "balance": "Balans",
+    "deposit": "Depoze",
+    "withdraw": "Retire",
+    "history": "Istwa Tranzaksyon",
+    "no_transactions": "Pa gen tranzaksyon pou kounye a",
+    "status": {
+      "pending": "An Atant",
+      "approved": "Apwouve",
+      "rejected": "Rejte",
+      "completed": "Konplete"
+    },
+    "deposit_modal": {
+      "title": "Fè yon Depo",
+      "select_method": "Chwazi Metòd Peman",
+      "account_info": "Enfòmasyon Kont pou Voye Lajan",
+      "amount": "Montan (HTG)",
+      "reference": "Nimewo Referans Tranzaksyon",
+      "reference_help": "Antre nimewo referans tranzaksyon an apre ou voye lajan",
+      "notes": "Nòt (opsyonèl)",
+      "submit": "Soumèt Depo",
+      "success": "Demann depo voye! Nou pral verifye li."
+    },
+    "withdraw_modal": {
+      "title": "Fè yon Retrè",
+      "select_method": "Chwazi Metòd Retrè",
+      "amount": "Montan (HTG)",
+      "destination": "Nimewo / Adrès Destinasyon",
+      "destination_help": "Antre nimewo telefòn, adrès, oswa kont pou resevwa lajan",
+      "notes": "Nòt (opsyonèl)",
+      "submit": "Soumèt Demann Retrè",
+      "success": "Demann retrè voye! Nou pral trete li.",
+      "insufficient": "Balans ou pa ase pou retrè sa a"
+    }
+  }
+}

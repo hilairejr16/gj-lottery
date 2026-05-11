@@ -19,8 +19,12 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
 
+  function getMessageFallback({ namespace, key }: { namespace?: string; key: string }) {
+    return namespace ? `${namespace}.${key}` : key;
+  }
+
   return (
-    <NextIntlClientProvider messages={messages}>
+    <NextIntlClientProvider messages={messages} onError={() => {}} getMessageFallback={getMessageFallback}>
       {children}
       <Toaster
         position="top-right"
