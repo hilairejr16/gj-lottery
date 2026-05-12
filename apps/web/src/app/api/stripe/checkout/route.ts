@@ -1,4 +1,3 @@
-import Stripe from 'stripe';
 import { NextRequest, NextResponse } from 'next/server';
 import { createAdminClient } from '@/lib/supabase/server';
 
@@ -13,6 +12,8 @@ export async function POST(request: NextRequest) {
       { status: 503 },
     );
   }
+  // Dynamic import so Stripe's module-level code runs at request time, not Worker init.
+  const { default: Stripe } = await import('stripe');
   const stripe = new Stripe(stripeKey, { apiVersion: '2024-12-18.acacia' });
 
   try {

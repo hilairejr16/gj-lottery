@@ -1,4 +1,3 @@
-import Stripe from 'stripe';
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
@@ -30,6 +29,8 @@ export async function POST(request: NextRequest) {
       { status: 500 },
     );
   }
+  // Dynamic import so Stripe's module-level code runs at request time, not Worker init.
+  const { default: Stripe } = await import('stripe');
   const stripe = new Stripe(stripeKey, { apiVersion: '2024-12-18.acacia' });
 
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
