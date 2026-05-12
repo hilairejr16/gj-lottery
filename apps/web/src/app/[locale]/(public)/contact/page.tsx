@@ -1,5 +1,5 @@
 'use client';
-export const runtime = 'edge';
+
 
 import { useState } from 'react';
 import { Mail, MessageSquare, Phone, MapPin, Send, Facebook, Instagram } from 'lucide-react';

@@ -1,4 +1,4 @@
-export const runtime = 'edge';
+
 
 import { FileText } from 'lucide-react';
 import { Link } from '@/i18n/navigation';

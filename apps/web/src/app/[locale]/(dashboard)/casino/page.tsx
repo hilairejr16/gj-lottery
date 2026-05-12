@@ -1,4 +1,4 @@
-export const runtime = 'edge';
+
 
 import Link from 'next/link';
 import { Gamepad2, Star, Flame, ChevronRight, Lock } from 'lucide-react';

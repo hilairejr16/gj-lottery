@@ -1,4 +1,4 @@
-export const runtime = 'edge';
+
 
 import { Briefcase, MapPin, Clock, ChevronRight } from 'lucide-react';
 

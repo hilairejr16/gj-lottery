@@ -1,4 +1,4 @@
-export const runtime = 'edge';
+
 
 import { Users, TrendingUp, DollarSign, Share2, ChevronRight, Copy, BarChart3 } from 'lucide-react';
 import Link from 'next/link';

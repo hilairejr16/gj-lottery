@@ -1,4 +1,4 @@
-export const runtime = 'edge';
+
 
 import { Scale, Heart, Phone, ShieldAlert } from 'lucide-react';
 import { Link } from '@/i18n/navigation';

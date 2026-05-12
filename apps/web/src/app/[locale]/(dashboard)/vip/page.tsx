@@ -1,4 +1,4 @@
-export const runtime = 'edge';
+
 
 import { Crown, Star, Gift, BarChart3, Zap, Shield, ChevronRight } from 'lucide-react';
 import Link from 'next/link';

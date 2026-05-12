@@ -1,8 +1,25 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { Toaster } from 'react-hot-toast';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import ToastProvider from '@/components/ui/toast-provider';
+
+// Static imports so the bundler always includes all three message files.
+// We intentionally bypass getMessages() here because it requires the
+// next-intl server context to be populated first — which can fail in
+// Cloudflare Workers when the context setup lags behind rendering.
+import htMessages from '@/messages/ht.json';
+import frMessages from '@/messages/fr.json';
+import enMessages from '@/messages/en.json';
+
+const messagesMap = {
+  ht: htMessages,
+  fr: frMessages,
+  en: enMessages,
+} as const;
+
+function getMessageFallback({ namespace, key }: { namespace?: string; key: string }) {
+  return namespace ? `${namespace}.${key}` : key;
+}
 
 export default async function LocaleLayout({
   children,
@@ -17,27 +34,17 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = await getMessages();
-
-  function getMessageFallback({ namespace, key }: { namespace?: string; key: string }) {
-    return namespace ? `${namespace}.${key}` : key;
-  }
+  const messages = messagesMap[locale as keyof typeof messagesMap] ?? htMessages;
 
   return (
-    <NextIntlClientProvider messages={messages} onError={() => {}} getMessageFallback={getMessageFallback}>
+    <NextIntlClientProvider
+      locale={locale}
+      messages={messages}
+      onError={() => {}}
+      getMessageFallback={getMessageFallback}
+    >
       {children}
-      <Toaster
-        position="top-right"
-        toastOptions={{
-          style: {
-            background: '#152035',
-            color: '#ffffff',
-            border: '1px solid #1E3A5F',
-          },
-          success: { iconTheme: { primary: '#16A34A', secondary: '#fff' } },
-          error:   { iconTheme: { primary: '#DC2626', secondary: '#fff' } },
-        }}
-      />
+      <ToastProvider />
     </NextIntlClientProvider>
   );
 }
