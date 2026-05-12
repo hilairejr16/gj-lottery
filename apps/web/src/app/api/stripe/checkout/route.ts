@@ -1,13 +1,20 @@
-export const runtime = 'edge';
-
 import Stripe from 'stripe';
 import { NextRequest, NextResponse } from 'next/server';
 import { createAdminClient } from '@/lib/supabase/server';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: '2024-12-18.acacia' });
 const HTG_TO_USD = 130;
 
 export async function POST(request: NextRequest) {
+  // Instantiate Stripe inside the handler so a missing key never crashes the Worker on boot.
+  const stripeKey = process.env.STRIPE_SECRET_KEY;
+  if (!stripeKey) {
+    return NextResponse.json(
+      { error: 'Stripe not configured — contact support' },
+      { status: 503 },
+    );
+  }
+  const stripe = new Stripe(stripeKey, { apiVersion: '2024-12-18.acacia' });
+
   try {
     const body = await request.json();
     // Accept { amountHTG, userId } (Phase 5 spec) OR legacy { amount, userId }

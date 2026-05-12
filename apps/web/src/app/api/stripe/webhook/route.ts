@@ -2,8 +2,6 @@ import Stripe from 'stripe';
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: '2024-12-18.acacia' });
-
 /**
  * Build a Supabase admin client without needing cookies.
  * The webhook endpoint has no browser session, so we use the
@@ -22,20 +20,25 @@ function getAdminClient() {
   });
 }
 
-/**
- * Disable Next.js body parsing so we can read the raw bytes
- * that Stripe needs for signature verification.
- */
-export const runtime = 'nodejs';
-
 export async function POST(request: NextRequest) {
+  // Instantiate Stripe inside the handler so a missing key never crashes the Worker on boot.
+  const stripeKey = process.env.STRIPE_SECRET_KEY;
+  if (!stripeKey) {
+    console.error('[stripe/webhook] STRIPE_SECRET_KEY is not set');
+    return NextResponse.json(
+      { error: 'Stripe not configured' },
+      { status: 500 },
+    );
+  }
+  const stripe = new Stripe(stripeKey, { apiVersion: '2024-12-18.acacia' });
+
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
   if (!webhookSecret) {
     console.error('[stripe/webhook] STRIPE_WEBHOOK_SECRET is not set');
     return NextResponse.json(
       { error: 'Webhook secret not configured' },
-      { status: 500 }
+      { status: 500 },
     );
   }
 
