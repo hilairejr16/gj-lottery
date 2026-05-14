@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+// next/font/google reads a font-manifest file at runtime, which fails in
+// Cloudflare Workers. Use a plain Google Fonts CSS link instead.
+const inter = { className: '' };
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://gjlottery.com';
 const APP_NAME = 'G&J Lottery';
@@ -77,6 +78,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning>
       <head>
+        {/* Google Fonts — loaded via CSS link to avoid next/font filesystem access in Workers */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -104,7 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }
