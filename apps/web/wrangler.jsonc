@@ -13,6 +13,12 @@
     "binding": "ASSETS"
   },
 
+  // Enable Workers Logs so errors are visible in the Cloudflare dashboard
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+
   // Plain-text build-time variables
   // NEXT_PUBLIC_ vars must be here (not Dashboard Secrets) so they are inlined at build time
   "vars": {
